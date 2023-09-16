@@ -1,0 +1,10 @@
+import * as requests from 'requests';
+import * as json from 'json';
+var api, info, url, userline, userstn;
+userline = input("Line:");
+userstn = input("Station:");
+api = "https://rt.data.gov.hk/v1/transport/mtr/getSchedule.php";
+url = "https://rt.data.gov.hk/v1/transport/mtr/getSchedule.php?line=" + userline + "&sta=" + userstn;
+info = requests.get(url).json();
+console.log("Next Train");
+console.log(info["data"]);
